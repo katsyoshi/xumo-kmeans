@@ -1,7 +1,7 @@
 require "xumo/kmeans/version"
 
 module Xumo
-  module Kmeans
+  class Kmeans
     class Node
       def initialize(args)
         case args
