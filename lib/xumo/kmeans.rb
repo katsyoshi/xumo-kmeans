@@ -16,5 +16,23 @@ module Xumo
         end
       end
     end
+
+    def initialize
+      @nodes = Array.new
+    end
+
+    def add(node)
+      @nodes <<
+        case node
+        when Node
+          node
+        when Hash
+          Node.new(node)
+        when Array
+          node.map do |n|
+            add(n)
+          end
+        end
+    end
   end
 end
